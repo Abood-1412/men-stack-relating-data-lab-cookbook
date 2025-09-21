@@ -56,8 +56,11 @@ app.use('/auth', authController);
 
 /* ----------------------------------- ROUTES --------------------------------------- */
 // PROTECTED
-app.use('/users/:userId/foods', isSignedIn, foodsController);
 app.use('/users', isSignedIn, usersController);
+
+app.use('/users/:userId/foods', isSignedIn, foodsController);
+
+
 
 /* ----------------------------------- TCP --------------------------------------- */
 app.listen(port, () => {
